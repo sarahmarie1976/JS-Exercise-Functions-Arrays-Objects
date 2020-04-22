@@ -16,6 +16,7 @@ function addNumbers(num1, num2) {
   return num1 + num2;
 }
 
+
 // ⭐️ Example Challenge end ⭐️
 
 
@@ -35,9 +36,16 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
+function sayGoodbye(nala) {
   /* code here */
+  let name = nala;
+  return 'Goodbye, ' + nala + '. Have a great day.';
 }
+
+// var eagle = 'Andy';
+// sayGoodbye(eagle);
+// sayGoodbye('Andy');
+// sayGoodbye('Yams');
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -53,9 +61,15 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
+function temperatureCtoF(celsius) {
   /* code here */
+  const cTemp = celsius;
+  const cToFahr = * 9 / 5 + 32;
+  const message = cTemp+'\xB0C is ' + cToFahr + ' \xB0f.';
+    console.log(message);
 }
+
+temperatureCtoF(24);
 
 /**
  * ### Challenge `temperatureInF`
