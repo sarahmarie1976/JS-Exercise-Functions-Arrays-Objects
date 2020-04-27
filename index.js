@@ -286,13 +286,13 @@ function getLastCarInfo(inventory) {
 */
 function getModelYears(inventory) {
   /* code here */
-  let arr = [];
+  let inventoryYears = [];
 
   for(let i = 0; i < inventory.length; i++){
-    arr.push(inventory[i].car_year);
+    inventoryYears.push(inventory[i].car_year);
   }
 
-  return arr;
+  return inventoryYears;
 }
 
 
@@ -333,10 +333,10 @@ function getCarInfoById(inventory, id ) {
 */
 function getOlderCars(inventory, max_year) {
 	/* code here */
-	let arr = [];
+	let inventoryYears = [];
 
 	if (max_year <= 1950) {
-		return arr; // return the empty array
+		return inventoryYears; // return the empty array
 	} else if (max_year >= 2019) {
 		return inventory; // return the entire inventory
 	}
@@ -345,12 +345,12 @@ function getOlderCars(inventory, max_year) {
 		// if the car_year of the current inventory item is greater than or equal to the max_year
 		if (inventory[i].car_year <= max_year) {
 			// add the inventory item to the array
-			arr.push(inventory[i]);
+			inventoryYears.push(inventory[i]);
 		}
 	}
 
 	// return the sorted array
-	return arr.sort();
+	return inventoryYears;
 }
 
 /**
@@ -368,7 +368,7 @@ function getOlderCars(inventory, max_year) {
 */
 function getGermanCars(inventory) {
   /* code here */
-   let arr = [];
+   let germanCar = [];
 
 		for (let i = 0; i < inventory.length; i++) {
 			if (
@@ -377,11 +377,11 @@ function getGermanCars(inventory) {
 				inventory[i].car_make === 'Volkswagen' ||
 				inventory[i].car_make === 'BMW'
 			) {
-				arr.push(inventory[i]);
+				germanCar.push(inventory[i]);
 			}
 		}
 
-		return arr.sort();
+		return germanCar;
 }
 
 /**
@@ -397,10 +397,10 @@ function getGermanCars(inventory) {
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(odometer) {
+function carMaker(miles) {
   /* code here */
-  let car = {
-		odometer: odometer,
+  let car = {  // name of object
+		odometer: miles,
 		drive: (distance) => {
 			car.odometer = car.odometer + distance;
 			return car.odometer;
